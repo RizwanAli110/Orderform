@@ -3,7 +3,7 @@
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title> 
         <span class="font-weight-light">Order</span>
-        <span>Form</span>
+        <span>Forms</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <div>
