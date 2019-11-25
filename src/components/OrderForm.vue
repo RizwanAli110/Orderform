@@ -1,11 +1,12 @@
 <template>
 <div class="orderform" style="postion:absolute;z-index:-1">
 <v-container>
-  <v-form
+  <v-form 
     ref="form"
     v-model="valid"
     lazy-validation
   >
+  <h2 class="primary--text">OrderForm</h2>
     <v-text-field
       v-model="itemcode"
       :counter="10"
@@ -53,28 +54,15 @@
      ></v-text-field>
 
     <v-btn
-      :disabled="!valid"
+     :disabled="!valid"
       color="success"
+      type="submit"
       class="mr-4"
-      @click="validate"
+     @click="submit"
     >
-      Validate
+      Submit
     </v-btn>
-
-    <v-btn
-      color="error"
-      class="mr-4"
-      @click="reset"
-    >
-      Reset Form
-    </v-btn>
-
-    <v-btn
-      color="warning"
-      @click="resetValidation"
-    >
-      Reset Validation
-    </v-btn>
+    
   </v-form>
 </v-container>
 </div>
@@ -84,16 +72,6 @@
   export default {
     data: () => ({
       valid: true,
-     // name: '',
-     // nameRules: [
-    //  v => !!v || 'Name is required',
-    //  v => (v && v.length <= 10) || 'Name must be less than 10 characters',
-     // ],
-      //email: '',
-     //emailRules: [
-      //  v => !!v || 'E-mail is required',
-      //  v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-      //],
       
       ICRules: [
         v => !!v || 'Item Code is required',
@@ -110,10 +88,30 @@
       DiscountRules: [
         v => !!v || 'Discount is required',
       ],
+
+      // name: '',
+     // nameRules: [
+    //  v => !!v || 'Name is required',
+    //  v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+     // ],
+      //email: '',
+     //emailRules: [
+      //  v => !!v || 'E-mail is required',
+      //  v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      //],
+       return:{
+        itemcode:'',
+        itemnumber:'',
+         },
     }),
 
     methods: {
-      validate () {
+      submit(){
+      //console.log(this.itemcode)
+      //console.log("Item Code is  and Item Number is ");
+      }
+
+     /* validate () {
         if (this.$refs.form.validate()) {
           this.snackbar = true
         }
@@ -123,7 +121,7 @@
       },
       resetValidation () {
         this.$refs.form.resetValidation()
-      },
-    },
+      },*/
+    }
   }
 </script>
