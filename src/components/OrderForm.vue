@@ -7,49 +7,51 @@
     v-model="valid"
     lazy-validation
   >
-  <h2 class="primary--text">OrderForm</h2>
+  <v-toolbar>
+    <h2 class="primary--text justify-center">OrderForm</h2>
+    </v-toolbar>
     <v-text-field
       v-model="itemcode"
       :counter="10"
-      :rules="ICRules"
+      :rules="Required"
       label="Item Code"
-      outlined
+      
       clearable
       required
     ></v-text-field>
 
     <v-text-field
       v-model="itemnumber"
-      :rules="INRules"
+      :rules="Required"
       label="Item Number"
-      outlined
+      
       clearable
       required
     ></v-text-field>
 
      <v-text-field
       v-model="quantity"
-      :rules="QuantityRules"
+      :rules="Required"
       label="Quantity"
-      outlined
+      
       clearable
       required
      ></v-text-field>
 
      <v-text-field
       v-model="price"
-      :rules="PriceRules"
+      :rules="Required"
       label="Price"
-      outlined
+      
       clearable
       required
      ></v-text-field>
 
      <v-text-field
       v-model="discount"
-      :rules="DiscountRules"
+      :rules="Required"
       label="Discount"
-      outlined
+      
       clearable
       required
      ></v-text-field>
@@ -75,36 +77,16 @@
     data: () => ({
       valid: true,
       
-      ICRules: [
-        v => !!v || 'Item Code is required',
+      Required: [
+        v => !!v || 'This field is required',
       ],
-      INRules: [
-        v => !!v || 'Item Number is required',
-      ],
-      QuantityRules: [
-        v => !!v || 'Quantity is required',
-      ],
-      PriceRules: [
-        v => !!v || 'Price is required',
-      ],
-      DiscountRules: [
-        v => !!v || 'Discount is required',
-      ],
-
-      // name: '',
-     // nameRules: [
-    //  v => !!v || 'Name is required',
-    //  v => (v && v.length <= 10) || 'Name must be less than 10 characters',
-     // ],
-      //email: '',
-     //emailRules: [
-      //  v => !!v || 'E-mail is required',
-      //  v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-      //],
-       return:{
-        itemcode:'',
-        itemnumber:'',
-         },
+     
+      quantity:'',
+      price:'',
+      discount:'',
+      itemcode:'',
+      itemnumber:'',
+        
     }),
 
     methods: {
