@@ -1,4 +1,5 @@
 <template>
+<v-card>
 <div class="orderform" style="postion:absolute;z-index:-1">
 <v-container>
   <v-form 
@@ -66,6 +67,7 @@
   </v-form>
 </v-container>
 </div>
+</v-card>
 </template>
 
 <script>

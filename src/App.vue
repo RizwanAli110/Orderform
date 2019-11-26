@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-      <HelloWorld/>  
+      <OrderForm/>  
       <router-view/> 
     </v-content>
      
@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import OrderForm from './components/OrderForm';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    OrderForm,
   },
 
   data: () => ({
